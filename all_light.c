@@ -38,6 +38,29 @@ int		my_light_plan(t_main *main)
 	return (0x00FFFF);
 }
 
+int		my_light_plan_inv(t_main *main)
+{
+	double v1;
+	double n1;
+	double n2;
+
+	main->plan_inv->xp = main->eye->xeye + main->eye->vx * main->plan_inv->v;
+	main->plan_inv->yp = main->eye->yeye + main->eye->vy * main->plan_inv->v;
+	main->plan_inv->zp = main->eye->zeye + main->eye->vz * main->plan_inv->v;
+	main->lum->vx = main->lum->x - main->plan_inv->xp;
+	main->lum->vy = main->lum->y - main->plan_inv->yp;
+	main->lum->vz = main->lum->z - main->plan_inv->zp;
+	v1 = (main->lum->nx * main->lum->vx + main->lum->ny
+			* main->lum->vy + main->lum->nz * main->lum->vz);
+	n1 = (pow(main->lum->nx, 2) + pow(main->lum->ny, 2)
+			+ pow(main->lum->nz, 2));
+	n2 = (pow(main->lum->vx, 2) + pow(main->lum->vy, 2)
+			+ pow(main->lum->vz, 2));
+	main->img->cos = v1 / (sqrt(n1) * sqrt(n2));
+	return (0xFF0000);
+}
+
+
 int		my_light_cylinder(t_main *main)
 {
 	double v1;

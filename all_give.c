@@ -53,26 +53,51 @@ void	main_four(int x, int y, t_main *main)
 	main->eye->xeye = -3000;
 	main->eye->yeye = 300;
 	main->eye->zeye = 500;
+
 }
 
-	void	main_three(int x, int y, t_main *main)
+void	main_seven(int x, int y, t_main *main)
 {
-		main->lum->nx = 0;
+	main->lum->nx = 0;
 	main->lum->ny = 0;
 	main->lum->nz = 100;
 	main->lum->x = -3000;
 	main->lum->y = 0;
 	main->lum->z = 2000;
-	main->eye->vx = 300;
+	main->eye->vx = 0;
 	main->eye->vy = (WIDTH / 2) - x;
 	main->eye->vz = (HEIGHT / 2) - y;
-	main->eye->xeye = -3000;
-	main->eye->yeye = (WIDTH / 2) - x;
-	main->eye->zeye = (HEIGHT / 2) - y;
-	main->cyl->x = main->eye->vx;
-	main->cyl->y = main->eye->vy;
-	main->cyl->z = main->eye->vz;
-	main->cyl->rayon = 400;
+	main->eye->xeye = -4000;
+	main->eye->yeye = 300;
+	main->eye->zeye = 900;
+	main->cyl->x = main->eye->vx + 900;
+	main->cyl->y = main->eye->vy + 0;
+	main->cyl->z = main->eye->vz + 0;
+	main->cyl->rayon = 200;
+	main->sphere->x = main->eye->vx + 900;
+	main->sphere->y = main->eye->vy + 0;
+	main->sphere->z = main->eye->vz + -300;
+	main->sphere->rayon = 400;
+}
+
+	void	main_three(int x, int y, t_main *main)
+{
+	main->lum->nx = 0;
+	main->lum->ny = 0;
+	main->lum->nz = 100;
+	main->lum->x = -2700;
+	main->lum->y = 2000;
+	main->lum->z = 4000;
+	main->eye->vx = 100;
+	main->eye->vy = (WIDTH / 2) - x;
+	main->eye->vz = (HEIGHT / 2) - y;
+	main->eye->xeye = -500;
+	main->eye->yeye = 0;
+	main->eye->zeye = 0;
+	main->cyl->x = main->eye->vx + CYL_X;
+	main->cyl->y = main->eye->vy + CYL_Y;
+	main->cyl->z = main->eye->vz + CYL_Z;
+	main->cyl->rayon = 250;
 }
 
 	void main_one(int x, int y, t_main *main)
@@ -80,19 +105,19 @@ void	main_four(int x, int y, t_main *main)
 	main->lum->nx = 0;
 	main->lum->ny = 0;
 	main->lum->nz = 100;
-	main->lum->x = -3000;
+	main->lum->x = -2700;
 	main->lum->y = 2000;
-	main->lum->z = 3000;
-	main->eye->vx = 300;
+	main->lum->z = 4000;
+	main->eye->vx = 100;
 	main->eye->vy = (WIDTH / 2) - x;
 	main->eye->vz = (HEIGHT / 2) - y;
-	main->eye->xeye = -800;
-	main->eye->yeye = (WIDTH / 2) - x;
-	main->eye->zeye = (HEIGHT / 2) - y;
-	main->sphere->x = main->eye->vx + 0;
-	main->sphere->y = main->eye->vy + 0;
-	main->sphere->z = main->eye->vz + 0;
-	main->sphere->rayon = 300;
+	main->eye->xeye = -500;
+	main->eye->yeye = 0;
+	main->eye->zeye = 0;
+	main->sphere->x = main->eye->vx + SPHERE_X;
+	main->sphere->y = main->eye->vy + SPHERE_Y;
+	main->sphere->z = main->eye->vz + SPHERE_Z;
+	main->sphere->rayon = 400;
 }
 
 void main_second(int x, int y, t_main *main)
@@ -100,18 +125,18 @@ void main_second(int x, int y, t_main *main)
 	main->lum->nx = 0;
 	main->lum->ny = 0;
 	main->lum->nz = 100;
-	main->lum->x = -8000;
+	main->lum->x = -2700;
 	main->lum->y = 0;
-	main->lum->z = 3000;
-	main->eye->vx = 300;
+	main->lum->z = 0;
+	main->eye->vx = 100;
 	main->eye->vy = (WIDTH / 2) - x;
 	main->eye->vz = (HEIGHT / 2) - y;
-	main->eye->xeye = -800;
-	main->eye->yeye = (WIDTH / 2) - x;
-	main->eye->zeye = (HEIGHT / 2) - y;
-	main->cone->x = main->eye->vx;
-	main->cone->y = main->eye->vy;
-	main->cone->z = main->eye->vz;
+	main->eye->xeye = -500;
+	main->eye->yeye = 0;
+	main->eye->zeye = 0;
+	main->cone->x = main->eye->vx + CONE_X;
+	main->cone->y = main->eye->vy + CONE_Y;
+	main->cone->z = main->eye->vz + CONE_Z;
 }
 
 void what_main(int x, int y, t_main *main)

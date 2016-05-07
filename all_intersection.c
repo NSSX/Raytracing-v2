@@ -60,12 +60,27 @@ void	cyl_inter(t_main *main)
 int		plan_inter(t_main *main)
 {
 	main->plan->v = (-main->eye->zeye) / main->eye->vz;
+//	main->plan->v = (main->eye->zeye) / main->eye->vz;
 	if (main->eye->vz == 0)
 		return (0);
 	main->lum->nx = 0;
 	main->lum->ny = 0;
 	main->lum->nz = 100;
 	if (main->plan->v > 0)
+		return (2);
+	else
+		return (1);
+}
+
+int		plan_inter_inv(t_main *main)
+{
+	main->plan_inv->v = (main->eye->zeye) / main->eye->vz;
+	if (main->eye->vz == 0)
+		return (0);
+	main->lum->nx = 0;
+	main->lum->ny = 0;
+	main->lum->nz = 100;
+	if (main->plan_inv->v > 0)
 		return (2);
 	else
 		return (1);

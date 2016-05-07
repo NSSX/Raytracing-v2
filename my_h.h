@@ -9,6 +9,18 @@
 # define RGB(r, g, b)(256 * 256 * (int)(r) + 256 * (int)(g) + (int)(b))
 # define WIDTH 800
 # define HEIGHT 600
+# define SPHERE_X 0
+# define SPHERE_Y 0
+# define SPHERE_Z 0
+# define CYL_X 0
+# define CYL_Y 0
+# define CYL_Z 0
+# define CONE_X 0
+# define CONE_Y 0
+# define CONE_Z 0
+# define CAM_X 100
+# define CAM_Y 100
+# define CAM_Z 100
 
 typedef struct                                                                  s_img
 {
@@ -159,6 +171,7 @@ typedef struct s_main
   t_vec3d 	*cyl;
   t_vec3d 	*cone;
   t_vec3d *plan;
+  t_vec3d *plan_inv;
   t_coord       *eye;
   t_lum         *lum;
   int rx;
@@ -172,6 +185,9 @@ typedef struct s_main
   double myv2;
 }	t_main;
 
+void main_seven(int x, int y, t_main *main);
+int my_light_plan_inv(t_main *main);
+int plan_inter_inv(t_main *main);
 void what_main(int x, int y, t_main *main);
 void main_four(int x, int y, t_main *main);
 void main_three(int x, int y, t_main *main);

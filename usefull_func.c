@@ -145,7 +145,17 @@ int		event_mlx(int keycode, t_main *main)
 			parcour_all(main);
 			mlx_put_image_to_window(main->mlx, main->win, main->img->img_ptr, 0, 0);
 		
-		}	return (0);
+		}	
+					if(keycode == 12)
+		{
+			mlx_destroy_image(main->mlx, main->img->img_ptr);
+    	    main->img->img_ptr = mlx_new_image(main->mlx, WIDTH, HEIGHT);
+			main->choice = 7;
+			parcour_all(main);
+			mlx_put_image_to_window(main->mlx, main->win, main->img->img_ptr, 0, 0);
+		
+		}
+		return (0);
 }
 
 double	mypow(int a, int n)
